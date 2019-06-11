@@ -1,6 +1,8 @@
 function easyHTTP()
 {
     this.http=new XMLHttpRequest();
+
+
 }
 
 
@@ -23,6 +25,26 @@ easyHTTP.prototype.get=function (url,callback)
 
     this.http.send();
 }
+
+//POST
+easyHTTP.prototype.post=function(url,data,callback)
+{
+    this.http.open('POST',url);
+    this.http.setRequestHeader('Content-type','application/json');
+    this.http.send(JSON.stringify(data));
+   
+
+    let self=this;
+    this.http.onload=function ()
+    {
+        callback(self.http.responseText);
+    }
+   
+}
+
+
+
+
 
 
 
