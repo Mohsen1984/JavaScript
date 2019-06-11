@@ -1,21 +1,10 @@
-function easyHTTP()
-{
-    const http=XMLHttpRequest();
-}
 
+const httpa=new easyHTTP();
 
-
-easyHTTP.prototype.get=function (url)
-{
-    this.http.open('GET',url,true);
-    
-    this.http.onload=function()
-    {
-        if(this.http.status===200)
-        {
-            console.log(http.responseText);
-        }
-    }
-    this.http.send();
-
-}
+httpa.get('https://jsonplaceholder.typicode.com/posts',
+                        function(response)
+                        {
+                            console.log(response);
+                           
+                        }
+);
