@@ -32,6 +32,21 @@ httpa.post('https://jsonplaceholder.typicode.com/posts',data,
             e.preventDefault();
 
 });
+document.getElementById('POSTPromis').addEventListener('click',function(e){
+    const data = 
+    {
+        
+        title:'my open test',
+        'body': 'bodi is'
+    };
+    const httpa=new easyHTTP();
+    httpa.postPromis('https://jsonplaceholder.typicode.com/posts',data)
+                    .then(function(a){console.log(a)})
+                    .catch(function(a){console.log(a)});
+                
+     e.preventDefault();
+    
+    });
 
 
 document.getElementById('DELETE').addEventListener('click',function(e){
