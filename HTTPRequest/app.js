@@ -31,5 +31,14 @@ httpa.post('https://jsonplaceholder.typicode.com/posts',data,
             );
             e.preventDefault();
 
-                });
+});
+
+
+document.getElementById('DELETE').addEventListener('click',function(e){
+
+    const httpa=new easyHTTP();
+    httpa.delete('https://jsonplaceholder.typicode.com/posts/10/1').then(function(a){console.log(a)}).catch(function(a){console.log(a)});
+    e.preventDefault();
+    
+});
 

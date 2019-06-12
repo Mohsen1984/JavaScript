@@ -42,6 +42,33 @@ easyHTTP.prototype.post=function(url,data,callback)
    
 }
 
+//DELETE
+easyHTTP.prototype.delete=function(url)
+{
+    let self=this;
+    let promis=new Promise((resolve,reject)=>{
+        console.log(self);
+        self.http.open('DELETE',url);
+      
+        self.http.onload=()=>{
+                if(self.http.status===200)
+                {
+                    resolve('DELETE OBJECT');
+                }
+                else
+                {
+                    reject('errore');
+                }
+
+        };
+        self.http.send();
+
+
+    });
+    return (promis);
+
+}
+
 
 
 
