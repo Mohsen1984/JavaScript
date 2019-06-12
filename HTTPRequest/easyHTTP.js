@@ -46,7 +46,7 @@ easyHTTP.prototype.post=function(url,data,callback)
 easyHTTP.prototype.postPromis=function(url,data)
 {
     let self=this;
-    const promis=new Promise((resolve,reject)=>{
+    const promis=new Promise((resolvee,reject)=>{
         self.http.open('POST',url);
         self.http.setRequestHeader('Content-type','application/json');
         self.http.send(JSON.stringify(data));
@@ -57,7 +57,7 @@ easyHTTP.prototype.postPromis=function(url,data)
         {
             if(self.http.status===201)
             {
-                resolve(self.http.responseText);
+                resolvee(self.http.responseText);
             }
                 else
                 {
