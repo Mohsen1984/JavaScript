@@ -21,6 +21,10 @@ easyHTTP.prototype.get=function (url,callback)
             
      
         }
+        else
+        {
+            callback("API NOT FOUND");
+        }
     }
 
     this.http.send();

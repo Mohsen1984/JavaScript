@@ -2,7 +2,7 @@
 document.getElementById('GET').addEventListener('click',function(e){
     const httpa=new easyHTTP();
     
-    httpa.get('https://jsonplaceholder.typicode.com/posts',
+    httpa.get('https://jsonplaceholder.typicode.com/posts/',
                             function(response)
                             {
                                 console.log(response);
@@ -57,3 +57,23 @@ document.getElementById('DELETE').addEventListener('click',function(e){
     
 });
 
+
+
+document.getElementById('getJson').addEventListener('click',function(e){
+    const http = new EasyHttp2();
+    
+    http.getJson('https://jsonplaceholder.typicode.com/posts/').then(data=> console.log(data));
+    http.getText('./mytext.txt').then(data=> console.log(data));
+    
+    e.preventDefault();
+})
+
+
+document.getElementById('postObject').addEventListener('click',function(e){
+    const http = new EasyHttp2();
+    
+    http.postJson('https://jsonplaceholder.typicode.com/posts/',{title:'Mohsen',body:'Body of mesage'}).then(data=> console.log(data));
+    
+    
+    e.preventDefault();
+})

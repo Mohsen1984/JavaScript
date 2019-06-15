@@ -1,4 +1,4 @@
-datas=[{name:'Mohsen',family:'Rahimi'},{name:'ali',family:'rezai'}];
+objects=[{name:'Mohsen',family:'Rahimi'},{name:'ali',family:'rezai'}];
 
 function createPost(post)
 {
@@ -6,7 +6,7 @@ function createPost(post)
     {
         let err=false;
         setTimeout(function(){
-                datas.push(post);
+                objects.push(post);
                 if(!err)
                 {
               
@@ -25,7 +25,7 @@ function createPost(post)
 const getdata=function()
 {
     
-    datas.forEach(data => {
+    objects.forEach(data => {
         console.log(data);
     });
 }
