@@ -6,8 +6,8 @@ function easyHTTP()
 }
 
 
-//GET
-easyHTTP.prototype.get=function (url,callback)
+//GET With callback function
+easyHTTP.prototype.get=function (url='',callback)
 {
     this.http.open('GET',url);
 
@@ -30,8 +30,8 @@ easyHTTP.prototype.get=function (url,callback)
     this.http.send();
 }
 
-//POST
-easyHTTP.prototype.post=function(url,data,callback)
+//POST With CallBack Function
+easyHTTP.prototype.post=function(url='',data={},callback)
 {
     this.http.open('POST',url);
     this.http.setRequestHeader('Content-type','application/json');
@@ -46,7 +46,7 @@ easyHTTP.prototype.post=function(url,data,callback)
    
 }
 
-
+//Post With Promios Object
 easyHTTP.prototype.postPromis=function(url,data)
 {
     let self=this;
@@ -77,7 +77,7 @@ easyHTTP.prototype.postPromis=function(url,data)
    
 }
 
-//DELETE
+//DELETE With Promis Object
 easyHTTP.prototype.delete=function(url)
 {
     let self=this;
